@@ -13,7 +13,7 @@ body {
 
 #calculator-container {
     width: 367.5px;
-    height: 534px;
+    padding: 30px;
     border-radius: 20px;
     background-color: #ccccccff;
     display: flex;
@@ -27,7 +27,7 @@ body {
     height: 87.5px;
     background-color: #fff;
     border-radius: 20px;
-    margin-bottom: 51px;
+    margin-bottom: 50px;
 }
 
 #container {
@@ -37,7 +37,7 @@ body {
     gap: 20px;
 }
 
-button {
+.btn-round, .btn-pill {
     width: 60.5px;
     background-color: grey;
     font-family: 'Comfortaa';
@@ -54,9 +54,32 @@ button {
     font-size: 15px;
 }
 
-.btn-round, .btn-heart {
+.btn-round {
     height: 60.5px;
     border-radius: 50px;
+    font-size: 40px;
+}
+
+.btn-heart {
+    background: none;
+    color: inherit;
+    border: none;
+    position: relative;
+    text-align: center;
+}
+
+.heart {
+    width: 61px;
+    height: 61px;
+}
+
+.heart-sign {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Comfortaa';
     font-size: 40px;
 }
 
