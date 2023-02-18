@@ -7,6 +7,7 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -39,47 +40,51 @@ body {
 
 .btn-round, .btn-pill {
     width: 60.5px;
-    background-color: grey;
-    font-family: 'Comfortaa';
-    font-weight: bold;
+    background-color: #999999ff;
+    font-family: Comfortaa;
     border: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.btn-round:hover, .btn-pill:hover {
+    background-color: #777777ff;
 }
 
 .btn-pill {
     height: 26px;
     border-radius: 20px;
     font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .btn-round {
     height: 60.5px;
     border-radius: 50px;
-    font-size: 40px;
+    font-size: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .btn-heart {
-    background: none;
-    color: inherit;
-    border: none;
-    position: relative;
-    text-align: center;
-}
-
-.heart {
+    background: url('heart.svg') no-repeat;
+    background-size: 61px 61px;
     width: 61px;
     height: 61px;
+    color: inherit;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-heart:hover {
+    background: url('heart_hover.svg') no-repeat;
+    background-size: 61px 61px;
 }
 
 .heart-sign {
     color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-family: 'Comfortaa';
-    font-size: 40px;
+    font-size: 55px;
 }
 
