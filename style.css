@@ -29,6 +29,11 @@ body {
     background-color: #fff;
     border-radius: 20px;
     margin-bottom: 50px;
+    padding-left: 10px;
+    font-family: Comfortaa;
+    font-size: 70px;
+    display: flex;
+    align-items: center; 
 }
 
 #container {
