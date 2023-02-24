@@ -15,18 +15,7 @@ const C = document.getElementById('C').addEventListener('click', () => {
    display.innerText = a;
 })
 
-//Negative or positive
-const plusMinus = document.getElementById('PM').addEventListener('click', () => {
-   if (a.slice(-1) !== '-') {
-      showDisplay('-');
-   } else {
-      a = a.slice(0, -1);
-      display.innerText = a;
-   }
-})
-
-
-//Displays value of button that user clicks on 
+//Buttons
 const percent = document.getElementById('percent').addEventListener('click', () => {
    showDisplay('%');
 })
@@ -76,21 +65,26 @@ const eight = document.getElementById('8').addEventListener('click', () => {
  });
 
  const plus = document.getElementById('plus').addEventListener('click', () => {
-   showDisplay('+');
+   showDisplay(' + ');
  })
 
  const subtract = document.getElementById('subtract').addEventListener('click', () => {
-   showDisplay('-');
+   showDisplay(' - ');
  })
 
 const multiply = document.getElementById('multiply').addEventListener('click', () => {
-   showDisplay('×');
+   showDisplay(' × ');
 })
 
 const divide = document.getElementById('divide').addEventListener('click', () => {
-   showDisplay('÷');
+   showDisplay(' ÷ ');
 })
 
+const equals = document.getElementById('equals').addEventListener('click', () => {
+   convertString(a);
+})
+
+//Displays data
 let showDisplay = function(num) {
     if (a === 0) {
         a = num;
@@ -99,3 +93,37 @@ let showDisplay = function(num) {
     }
     display.innerText = a;
 }
+
+//Splits and converts string
+let convertString = function(num) {
+
+   //Get variable num + split string into an array
+   let list = num.split(" "); 
+
+   //Break apart array with let [x, y] = num
+   let [num1, sign, num2] = list;
+
+   //Use parseFloat to turn strings into numbers
+   num1 = parseFloat(num1);
+   num2 = parseFloat(num2);
+
+   operate(num1, num2, sign);
+}
+
+//Perform the math
+const operate = function(num1, num2, sign) {
+    let total = 0;
+    if (sign === '+') {
+        total = num1 + num2; 
+    } else if (sign === '-') {
+        total = num1 - num2;
+    } else if (sign === '×') {
+        total = num1 * num2;
+    } else {
+        total = num1 / num2;
+    }
+    total = total.toFixed(2);
+    display.innerText = total;
+ };
+
+
