@@ -16,10 +16,6 @@ const C = document.getElementById('C').addEventListener('click', () => {
 })
 
 //Buttons
-const percent = document.getElementById('percent').addEventListener('click', () => {
-   showDisplay('%');
-})
-
 const seven = document.getElementById('7').addEventListener('click', () => {
    showDisplay('7');
 });
@@ -120,9 +116,12 @@ const operate = function(num1, num2, sign) {
     } else if (sign === '×') {
         total = num1 * num2;
     } else {
+      if (num1 === 0 || num2 === 0) {
+         total = "I can't let you do that, Dave!";
+        } else {
         total = num1 / num2;
+        }
     }
-    total = total.toFixed(2);
     display.innerText = total;
  };
 
