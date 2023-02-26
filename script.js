@@ -122,7 +122,11 @@ const operate = function(num1, num2, sign) {
         total = num1 / num2;
         }
     }
-    display.innerText = total;
+    if (total % 1 !== 0) {
+      display.innerText = total.toFixed(1);
+    } else {
+      display.innerText = total;
+    }
  };
 
 
