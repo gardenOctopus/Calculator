@@ -15,6 +15,33 @@ const C = document.getElementById('C').addEventListener('click', () => {
    display.innerText = a;
 })
 
+//Colours
+const calculator_container = document.getElementById('calculator-container');
+const btnRound = document.querySelectorAll('.btn-round');
+const btnPill = document.querySelectorAll('.btn-pill');
+
+//Changes to previous colour
+const PColour = document.getElementById('P-COLOUR').addEventListener('click', () => {
+   calculator_container.setAttribute('style', 'background-color: #d0eff9;');
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#00c6f2";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#00c6f2";
+   }
+})
+
+//Changes to next colour
+const NColour = document.getElementById('N-COLOUR').addEventListener('click', () => {
+   calculator_container.setAttribute('style', 'background-color: #ffe1ed;');
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#ff90be";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#ff90be";
+   }
+})
+
 //Buttons
 const seven = document.getElementById('7').addEventListener('click', () => {
    showDisplay('7');
