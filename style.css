@@ -54,22 +54,6 @@ body {
     background-color: #777777ff;
 }
 
-#P-COLOUR {
-    background-color: #00a1cd83;
-}
-
-#P-COLOUR:hover {
-    background-color: #00a1cd;
-}
-
-#N-COLOUR {
-    background-color: #ff1f808c;
-}
-
-#N-COLOUR:hover {
-    background-color: #ff1f7f;
-}
-
 .btn-pill {
     height: 26px;
     border-radius: 20px;

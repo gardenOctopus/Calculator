@@ -15,13 +15,102 @@ const C = document.getElementById('C').addEventListener('click', () => {
    display.innerText = a;
 })
 
-//Colours
+//Grab Divs & Buttons to Colour
 const calculator_container = document.getElementById('calculator-container');
 const btnRound = document.querySelectorAll('.btn-round');
 const btnPill = document.querySelectorAll('.btn-pill');
+const btnHeart = document.querySelectorAll('.btn-heart');
+const btnPrevious = document.querySelector('#P-COLOUR');
+const btnNext = document.querySelector('#N-COLOUR');
+let id = 0; 
+console.log(id);
 
-//Changes to previous colour
-const PColour = document.getElementById('P-COLOUR').addEventListener('click', () => {
+//Colour Functions
+const grey = function () {
+   calculator_container.setAttribute('style', 'background-color: #ccccccff;');
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#999999ff";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#999999ff";
+   }
+   for (i = 0; i < btnHeart.length; i++) {
+      btnHeart[i].style.backgroundImage = "url('heart.svg')"
+   }
+   id = 0;
+}
+
+const pink = function () {
+   calculator_container.setAttribute('style', 'background-color: #ffe1ed;');
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#ff90be";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#ff90be";
+   }
+   for (i = 0; i < btnHeart.length; i++) {
+      btnHeart[i].style.backgroundImage = "url('heart_pink.svg')"
+   }
+   id = 1;
+}
+
+const rufous = function () {
+   calculator_container.setAttribute('style', 'background-color: #fcc9c2ff;');
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#f33315ff";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#f33315ff";
+   }
+   for (i = 0; i < btnHeart.length; i++) {
+      btnHeart[i].style.backgroundImage = "url('heart_rufous.svg')"
+   }
+   id = 2;
+}
+
+const orange = function () {
+   calculator_container.setAttribute('style', 'background-color: #ffe2dd;');
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#fd9885";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#fd9885";
+   }
+   for (i = 0; i < btnHeart.length; i++) {
+      btnHeart[i].style.backgroundImage = "url('heart_orange.svg')"
+   }
+   id = 3; 
+}
+
+const green = function () {
+   calculator_container.setAttribute('style', 'background-color: #d1f0e5;');
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#2ecaa9";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#2ecaa9";
+   }
+   for (i = 0; i < btnHeart.length; i++) {
+      btnHeart[i].style.backgroundImage = "url('heart_green.svg')"
+   }
+   id = 4;
+}
+
+const purple = function () {
+   calculator_container.setAttribute('style', 'background-color: #f5e4fa;');
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#e09dec";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#e09dec";
+   }
+   for (i = 0; i < btnHeart.length; i++) {
+      btnHeart[i].style.backgroundImage = "url('heart_purple.svg')"
+   }
+   id = 5;
+}
+
+const blue = function () {
    calculator_container.setAttribute('style', 'background-color: #d0eff9;');
    for (i = 0; i < btnRound.length; i++) {
       btnRound[i].style.background = "#00c6f2";
@@ -29,16 +118,48 @@ const PColour = document.getElementById('P-COLOUR').addEventListener('click', ()
    for (i = 0; i < btnPill.length; i++) {
       btnPill[i].style.background = "#00c6f2";
    }
+   for (i = 0; i < btnHeart.length; i++) {
+      btnHeart[i].style.backgroundImage = "url('heart_blue.svg')"
+   }
+   id = 6;
+}
+
+
+//Changes to previous colour
+btnPrevious.addEventListener('click', () => {
+   if (id === 0) {
+      blue();
+   } else if (id === 6) {
+      purple();
+   } else if (id === 5) {
+      green();
+   } else if (id === 4) {
+      orange();
+   } else if (id === 3) {
+      rufous();
+   } else if (id === 2) {
+      pink();
+   } else {
+      grey();
+   }
 })
 
 //Changes to next colour
-const NColour = document.getElementById('N-COLOUR').addEventListener('click', () => {
-   calculator_container.setAttribute('style', 'background-color: #ffe1ed;');
-   for (i = 0; i < btnRound.length; i++) {
-      btnRound[i].style.background = "#ff90be";
-   }
-   for (i = 0; i < btnPill.length; i++) {
-      btnPill[i].style.background = "#ff90be";
+btnNext.addEventListener('click', () => {
+   if (id === 0) {
+      pink();
+   } else if (id === 1) {
+      rufous();
+   } else if (id === 2) {
+      orange();
+   } else if (id === 3) {
+      green();
+   } else if (id === 4) {
+      purple();
+   } else if (id === 5) {
+      blue();
+   } else {
+      grey();
    }
 })
 
