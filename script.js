@@ -23,7 +23,19 @@ const btnHeart = document.querySelectorAll('.btn-heart');
 const btnPrevious = document.querySelector('#P-COLOUR');
 const btnNext = document.querySelector('#N-COLOUR');
 let id = 0; 
-console.log(id);
+
+//Rollover Function
+const rollOver = function () {
+   for (i = 0; i < btnRound.length; i++) {
+      btnRound[i].style.background = "#2b2b2b82";
+   }
+   for (i = 0; i < btnPill.length; i++) {
+      btnPill[i].style.background = "#2b2b2b82";
+   }
+   for (i = 0; i < btnHeart.length; i++) {
+      btnHeart[i].style.backgroundImage = "url('heart_hover.svg')"
+   }
+}
 
 //Colour Functions
 const grey = function () {
