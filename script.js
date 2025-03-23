@@ -27,7 +27,7 @@ let id = 0;
 //Rollover Function
 const rollOver = function () {
    for (i = 0; i < btnRound.length; i++) {
-      btnRound[i].style.background = "#2b2b2b82";
+      btnRound[i].onmouseover = function() {style.background = "#2b2b2b82"};
    }
    for (i = 0; i < btnPill.length; i++) {
       btnPill[i].style.background = "#2b2b2b82";
@@ -286,6 +286,7 @@ const operate = function(num1, num2, sign) {
       display.innerText = total.toFixed(1);
     } else {
       display.innerText = total;
+      a = total; 
     }
  };
 
